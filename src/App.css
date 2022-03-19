@@ -10,7 +10,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
+}
+#welcome-message{
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.3;
 }
 
 input{
@@ -30,7 +34,7 @@ input{
   background: rgba(243, 243, 243, 0.973);
 }
 .head-text{
-  font-size: 2rem;
+  font-size: 1.6em;
 }
 #user-name{
   font-weight: bold;
@@ -39,9 +43,11 @@ input{
 img{
   display: block;
   max-width: 100%;
+  
   height: auto;
   margin: 0 auto;
-  border-radius: 5px;
+  border: 4px solid rgb(52, 33, 138);
+  border-radius: 100%;
 }
 
 .img-prof{
@@ -52,5 +58,24 @@ img{
 padding: 10px;
 margin: 0px 0px 10px 0px;
 line-height: 1.0;
+}
+
+@media (max-width: 460px) {
+  h1,h2{
+      font-size: 2.1rem;
+      line-height: 1.2;
+  }
+  .container {
+      margin:0
+  }
+  .head-text{
+      font-size: 1.3rem;
+  }
+  img {
+      max-width: 80%;
+      display: block;
+      height: auto;
+      margin: 0 auto;
+    }
 }
 

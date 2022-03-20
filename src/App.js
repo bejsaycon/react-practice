@@ -57,7 +57,7 @@ function App() {
               {", "}
               {userData.results[0].location.city}
               {", "}
-              {userData.results[0].location.state}
+              {userData.results[0].location.state}{" "}
               {userData.results[0].location.postcode}
               {", "}
               {userData.results[0].location.country}

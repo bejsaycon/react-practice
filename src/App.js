@@ -1,33 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import { useForm } from "./useForm";
+
+//Custom hook
+// import { useForm } from "./useForm";
+// import { useFetch } from "./useFetch";
+
 
 function App() {
-  //useStates for data and seed for user random generator
+  const [seed, setSeed] = useState('');
+  const [input, setInput] = useState('');
   const [userData, setUserData] = useState([]);
-  const [values, handleChange] = useForm({seed:""});
-
-  //fetch randomuser api with seed from the input box
-  const getUser = (event) => {
-    if (event.key == "Enter") {
-      fetch(`https://randomuser.me/api/?seed=${values.seed}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setUserData(data);
-        })        
-    }
-  };
+  // const [values, handleChange] = useForm({seed:""});
   
+  const url = `https://randomuser.me/api/?seed=${seed}`
+
+  useEffect(()=>{
+    fetch(url)
+    .then(response => response.json())
+    .then(data=>{
+        setUserData(data);
+    })
+}, [seed])
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSeed(input);
+  }
+
+
+  
+
   return (
     <div className="container">
+      <form onSubmit={handleSubmit}>
       <input  
         className="input"
         name="seed"
         placeholder="Enter random string"
-        onChange={handleChange}
-        value={values.seed}
-        onKeyPress={getUser}       
+        onChange={(e)=>setInput(e.target.value)}
+        value={input}
       />
+      </form>
 
       {typeof userData.results === "undefined" ? (
         <div className="below-input-box">

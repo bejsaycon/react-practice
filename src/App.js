@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import '../src/styles/App.css';
+import "../src/styles/App.css";
+import Welcome from "../src/components/Welcome";
+import Outputbox from "./components/Outputbox";
 
 function App() {
   const [seed, setSeed] = useState(null);
@@ -35,52 +37,11 @@ function App() {
           value={input}
           required
         />
-        <button type="submit"><i className="fas fa-search"></i></button>
+        <button type="submit">
+          <i className="fas fa-search"></i>
+        </button>
       </form>
-
-      {seed === null ? (
-        <div className="below-input-box">
-          <p className="head-text" id="welcome-message">
-            Welcome to Random user Generator, Enter any keyword to start
-          </p>
-        </div>
-      ) : (
-        <div className="below-input-box">
-          <figure className="img-prof">
-            <img
-              src={userData.results[0].picture.large}
-              className
-              alt="USER PROFILE"
-            />
-          </figure>
-
-          <div className="user-info-card">
-            <p id="user-name" className="user-details head-text">
-              <i className="fas fa-user"></i> {userData.results[0].name.title}{" "}
-              {userData.results[0].name.first} {userData.results[0].name.last}
-            </p>
-            <p id="address" className="user-details head-text">
-              <i className="fas fa-map-marker-alt"></i>{" "}
-              {userData.results[0].location.street.name}{" "}
-              {userData.results[0].location.street.number}
-              {", "}
-              {userData.results[0].location.city}
-              {", "}
-              {userData.results[0].location.state}{" "}
-              {userData.results[0].location.postcode}
-              {", "}
-              {userData.results[0].location.country}
-            </p>
-            <p id="email" className="user-details head-text">
-              <i className="fas fa-envelope"></i> {userData.results[0].email}
-            </p>
-
-            <p id="phone" className="user-details head-text">
-              <i className="fas fa-phone-alt"></i> {userData.results[0].phone}
-            </p>
-          </div>
-        </div>
-      )}
+      {seed === null ? <Welcome /> : <Outputbox userData={userData} />}
     </div>
   );
 }

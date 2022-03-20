@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import '../src/styles/App.css';
 
 function App() {
   const [seed, setSeed] = useState(null);

@@ -4,7 +4,6 @@ import { useForm } from "./useForm";
 
 function App() {
   //useStates for data and seed for user random generator
-  
   const [userData, setUserData] = useState([]);
   const [values, handleChange] = useForm({seed:""});
 
@@ -15,20 +14,19 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           setUserData(data);
-          
-        });
+        })        
     }
   };
-
+  
   return (
     <div className="container">
-      <input
+      <input  
         className="input"
         name="seed"
         placeholder="Enter random string"
         onChange={handleChange}
         value={values.seed}
-        onKeyPress={getUser}
+        onKeyPress={getUser}       
       />
 
       {typeof userData.results === "undefined" ? (
@@ -49,11 +47,11 @@ function App() {
 
           <div className="user-info-card">
             <p id="user-name" className="user-details head-text">
-              <i class="fas fa-user"></i> {userData.results[0].name.title}{" "}
+              <i className="fas fa-user"></i> {userData.results[0].name.title}{" "}
               {userData.results[0].name.first} {userData.results[0].name.last}
             </p>
             <p id="address" className="user-details head-text">
-            <i class="fas fa-map-marker-alt"></i>{" "}
+            <i className="fas fa-map-marker-alt"></i>{" "}
               {userData.results[0].location.street.name}{" "}
               {userData.results[0].location.street.number}
               {", "}
@@ -65,12 +63,12 @@ function App() {
               {userData.results[0].location.country}
             </p>
             <p id="email" className="user-details head-text">
-            <i class="fas fa-envelope"></i>{" "}
+            <i className="fas fa-envelope"></i>{" "}
               {userData.results[0].email}
             </p>
 
             <p id="phone" className="user-details head-text">
-            <i class="fas fa-phone-alt"></i>{" "}
+            <i className="fas fa-phone-alt"></i>{" "}
               {userData.results[0].phone}
             </p>
           </div>

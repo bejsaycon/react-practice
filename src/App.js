@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./App.css";
+import { useForm } from "./useForm";
 
 function App() {
   //useStates for data and seed for user random generator
   
   const [userData, setUserData] = useState([]);
-  const [seed, setSeed] = useState("");
+  const [values, handleChange] = useForm({seed:""});
 
   //fetch randomuser api with seed from the input box
   const getUser = (event) => {
     if (event.key == "Enter") {
-      fetch(`https://randomuser.me/api/?seed=${seed}`)
+      fetch(`https://randomuser.me/api/?seed=${values.seed}`)
         .then((response) => response.json())
         .then((data) => {
           setUserData(data);
-          setSeed("");
+          
         });
     }
   };
@@ -23,9 +24,10 @@ function App() {
     <div className="container">
       <input
         className="input"
+        name="seed"
         placeholder="Enter random string"
-        onChange={(e) => setSeed(e.target.value)}
-        value={seed}
+        onChange={handleChange}
+        value={values.seed}
         onKeyPress={getUser}
       />
 
@@ -41,7 +43,7 @@ function App() {
             <img
               src={userData.results[0].picture.large}
               className
-              alt="USER PROFILE PICTURE"
+              alt="USER PROFILE"
             />
           </figure>
 

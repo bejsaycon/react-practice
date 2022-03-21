@@ -2,7 +2,7 @@ import React from 'react'
 
 function InputForm(props) {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form className='form-container' onSubmit={props.handleSubmit}>
         <input
           className="input"
           name="seed"
@@ -12,7 +12,7 @@ function InputForm(props) {
           required
         />
         <button type="submit"><i className="fas fa-search"></i></button>
-      </form>
+      </form>  
   )
 }
 

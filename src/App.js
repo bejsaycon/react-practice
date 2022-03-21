@@ -9,8 +9,8 @@ function App() {
   const [seed, setSeed] = useState(null);
   const [input, setInput] = useState("");
   const [userData, setUserData] = useState([]);
-
   const url = `https://randomuser.me/api/?seed=${seed}`;
+
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -21,11 +21,14 @@ function App() {
       setInput("");
     };
   }, [url]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setSeed(input);
   };
+
   const onChange = (e) => setInput(e.target.value);
+
   return (
     <div className="container">
       <InputForm

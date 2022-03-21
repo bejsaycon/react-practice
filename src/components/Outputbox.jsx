@@ -5,7 +5,7 @@ function Outputbox(props) {
   return (
     <div className="below-input-box">
           <Figure src={props.userData.results[0].picture.large}/>
-          
+
           <div className="user-info-card">
             <p id="user-name" className="user-details head-text">
               <i className="fas fa-user"></i> {props.userData.results[0].name.title}{" "}
@@ -31,7 +31,7 @@ function Outputbox(props) {
             </p>
           </div>
 
-          
+
         </div>
   )
 }

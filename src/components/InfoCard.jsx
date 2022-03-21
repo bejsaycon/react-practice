@@ -1,7 +1,7 @@
 import React from "react";
 import UserDetails from "./UserDetails";
 
-function InfoCard(props) {
+function InfoCard({user}) {
   return (
     <>
       <div className="user-info-card">
@@ -9,39 +9,39 @@ function InfoCard(props) {
           className={"user-name user-details head-text"}
           iconClass={"fas fa-user"}
           children={
-            props.user.name.title +
+            user.name.title +
             " " +
-            props.user.name.first +
+            user.name.first +
             " " +
-            props.user.name.last
+            user.name.last
           }
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-map-marker-alt"}
           children={
-            props.user.location.street.name +
+            user.location.street.name +
             " " +
-            props.user.location.street.number +
+            user.location.street.number +
             ", " +
-            props.user.location.city + 
+            user.location.city + 
             ", " +
-            props.user.location.state +
+            user.location.state +
             " " +
-            props.user.location.postcode +
+            user.location.postcode +
             ", " +
-            props.user.location.country
+            user.location.country
           }
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-envelope"}
-          children={" "+props.user.email}
+          children={" "+user.email}
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-phone-alt"}
-          children={" "+props.user.phone}
+          children={" "+user.phone}
         />
       </div>
     </>

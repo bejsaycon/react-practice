@@ -30,6 +30,8 @@ function Outputbox(props) {
               <i className="fas fa-phone-alt"></i> {props.userData.results[0].phone}
             </p>
           </div>
+
+          
         </div>
   )
 }

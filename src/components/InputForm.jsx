@@ -2,13 +2,13 @@ import React from 'react'
 
 function InputForm(props) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
         <input
           className="input"
           name="seed"
           placeholder="Enter random string"
-          onChange={(e) => setInput(e.target.value)}
-          value={input}
+          onChange={props.onChange}
+          value={props.input}
           required
         />
         <button type="submit"><i className="fas fa-search"></i></button>

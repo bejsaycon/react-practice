@@ -9,7 +9,7 @@ function Outputbox(props) {
           <Figure src={props.usersData.results[0].picture.large}/>
           <InfoCard user={props.usersData.results[0]}/>
     </div>
-        </React.Fragment>
+    </React.Fragment>
   )
 }
 

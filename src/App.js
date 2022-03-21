@@ -36,7 +36,7 @@ function App() {
         onChange={onChange}
         input={input}
       />
-      {seed === null ? <Welcome /> : <Outputbox userData={userData} />}
+      {seed === null ? <Welcome /> : <Outputbox usersData={userData} />}
     </div>
   );
 }

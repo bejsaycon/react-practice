@@ -10,7 +10,6 @@ function App() {
   const [seed, setSeed] = useState(null);
   const url = `https://randomuser.me/api/?seed=${seed}`;
   const inputRef = useRef();
-
   const data = useFetch(url);
 
   const handleSubmit = (event) => {
@@ -21,8 +20,9 @@ function App() {
   return (
     <div className="container">
       <InputForm
+        ref={inputRef}
+        input={inputRef}
         handleSubmit={handleSubmit}
-        input ={inputRef}
         seed={seed}
       />
       {seed === null ? <Welcome /> : <Outputbox usersData={data} />}

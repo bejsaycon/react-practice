@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Figure(props) {
+function Figure({src}) {
   return (
     <figure className="img-prof">
             <img
-              src={props.src}
+              src={src}
               className
               alt="USER-PROFILE"
             />

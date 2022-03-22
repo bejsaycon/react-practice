@@ -17,22 +17,22 @@ function InfoCard({user}) {
         <UserDetails
           className={"user-name user-details head-text"}
           iconClass={"fas fa-user"}
-          children={`${name.title} ${name.first} ${name.last}`}
+          children={` ${name.title} ${name.first} ${name.last}`}
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-map-marker-alt"}
-          children={`${location.street.name} ${location.street.number}, ${location.city}, ${location.state} ${location.postcode} ${location.country}`}
+          children={` ${location.street.name} ${location.street.number}, ${location.city}, ${location.state} ${location.postcode} ${location.country}`}
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-envelope"}
-          children={`${email}`}
+          children={` ${email}`}
         />
         <UserDetails
           className={"user-details head-text"}
           iconClass={"fas fa-phone-alt"}
-          children={`${phone}`}
+          children={` ${phone}`}
         />
       </div>
     </>

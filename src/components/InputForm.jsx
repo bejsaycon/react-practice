@@ -1,10 +1,10 @@
 import React from 'react'
 
-function InputForm({handleSubmit, input, seed}) {
+function InputForm({handleSubmit, inputRef, seed}) {
   return (
     <form className='form-container' onSubmit={handleSubmit}>
         <input
-          ref ={input}
+          ref ={inputRef}
           className="input"
           name="seed"
           placeholder="Enter random string"

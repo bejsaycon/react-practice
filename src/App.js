@@ -14,14 +14,14 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(event.target);
     setSeed(inputRef.current.value);
   };
 
   return (
     <div className="container">
       <InputForm
-        ref={inputRef}
-        input={inputRef}
+        inputRef={inputRef}
         handleSubmit={handleSubmit}
         seed={seed}
       />

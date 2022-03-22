@@ -1,15 +1,25 @@
 import React from 'react'
-import Figure from './Figure'
 import InfoCard from './InfoCard';
 
 
+function Figure({src}) {
+  return (
+    <figure className="img-prof">
+            <img
+              src={src}
+              className
+              alt="USER-PROFILE"
+            />
+    </figure>
+  )
+}
 
-function Outputbox(props) {
+function Outputbox({usersData}) {
   return (
     <React.Fragment>
     <div className="below-input-box">
-          <Figure src={props.usersData.results[0].picture.large}/>
-          <InfoCard user={props.usersData.results[0]}/>
+          <Figure src={usersData.results[0].picture.large}/>
+          <InfoCard user={usersData.results[0]}/>
     </div>
     </React.Fragment>
   )

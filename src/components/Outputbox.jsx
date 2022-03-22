@@ -1,11 +1,10 @@
 import React from 'react'
 import InfoCard from './InfoCard';
 
-
 function Figure({src}) {
   return (
     <figure className="img-prof">
-            <img src={src} className alt="USER-PROFILE"/>
+      <img src={src} className alt="USER-PROFILE"/>
     </figure>
   )
 }

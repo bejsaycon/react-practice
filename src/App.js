@@ -6,16 +6,13 @@ import InputForm from "./components/InputForm";
 import { useFetch } from "./custom_hooks/useFetch";
 
 function App() {
-  //Try to incorporate Custom Hooks from custom_hooks folder
   const [seed, setSeed] = useState(null);
   const url = `https://randomuser.me/api/?seed=${seed}`;
   const data = useFetch(url);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setSeed(event.target[0].value);
   };
-
   return (
     <div className="container">
       <InputForm
@@ -26,5 +23,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

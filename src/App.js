@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import {useState} from "react";
 import "../src/styles/App.css";
 import Welcome from "../src/components/Welcome";
 import Outputbox from "./components/Outputbox";
@@ -13,6 +13,11 @@ function App() {
     event.preventDefault();
     setSeed(event.target[0].value);
   };
+  //USEMEMO
+  //TYPESCRIPT
+  //NODEJS EXPRESS JS
+  //USECALLBACK
+  //HIDE API
   return (
     <div className="container">
       <InputForm

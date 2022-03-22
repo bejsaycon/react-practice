@@ -1,10 +1,10 @@
 import React from "react";
 
-function UserDetails(props) {
+function UserDetails({className, iconClass, children}) {
   return (
-    <div className={props.className}>
-      <i className={props.iconClass}></i>
-      {props.children}
+    <div className={className}>
+      <i className={iconClass}></i>
+      {children}
     </div>
   );
 }

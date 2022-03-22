@@ -11,12 +11,13 @@ function App() {
   const data = useFetch(url);
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log('getting data');
     setSeed(event.target[0].value);
   };
   //USEMEMO
+  //USECALLBACK
   //TYPESCRIPT
   //NODEJS EXPRESS JS
-  //USECALLBACK
   //HIDE API
   return (
     <div className="container">

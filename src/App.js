@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import "../src/styles/App.css";
 import Welcome from "../src/components/Welcome";
 import Outputbox from "./components/Outputbox";
@@ -9,19 +9,16 @@ function App() {
   //Try to incorporate Custom Hooks from custom_hooks folder
   const [seed, setSeed] = useState(null);
   const url = `https://randomuser.me/api/?seed=${seed}`;
-  const inputRef = useRef();
   const data = useFetch(url);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
-    setSeed(inputRef.current.value);
+    setSeed(event.target[0].value);
   };
 
   return (
     <div className="container">
       <InputForm
-        inputRef={inputRef}
         handleSubmit={handleSubmit}
         seed={seed}
       />

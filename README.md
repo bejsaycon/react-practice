@@ -1,4 +1,7 @@
-A Random User Generator using https://randomuser.me/api 
+React Practice Project: A random user generator.
+(Uses Functional Approach in Reactjs.)
 
-How to use:
-Type random keyword in the input box. Then press 'Enter' key to Generate. The keyword you entered allows you to always generate the same set of users. For example, the seed "foobar" will always return results for Becky Sims (for version 1.0). Keywords can be any string or sequence of characters.
+A random profile generator with users from randomuser.me API. 
+Each combination of keywords corresponds to different profile.
+Enter a random word or string in the input box and Enter.  
+

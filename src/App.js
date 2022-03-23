@@ -8,8 +8,7 @@ import { useFetch } from "./custom_hooks/useFetch";
 function App() {
   const [seed, setSeed] = useState(null);
   const url = `https://randomuser.me/api/?seed=${seed}`;
-  const data = useFetch(url);
-
+  const {data} = useFetch(url);
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
@@ -17,9 +16,6 @@ function App() {
     },
     [],
   )
-  //TYPESCRIPT
-  //NODEJS EXPRESS JS
-  //HIDE API
   return (
     <div className="container">
       <InputForm handleSubmit={handleSubmit}/>

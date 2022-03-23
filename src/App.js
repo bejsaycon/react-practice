@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useCallback} from "react";
 import "../src/styles/App.css";
 import Welcome from "../src/components/Welcome";
 import Outputbox from "./components/Outputbox";
@@ -9,22 +9,20 @@ function App() {
   const [seed, setSeed] = useState(null);
   const url = `https://randomuser.me/api/?seed=${seed}`;
   const data = useFetch(url);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('getting data');
-    setSeed(event.target[0].value);
-  };
-  //USEMEMO
-  //USECALLBACK
+
+  const handleSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      setSeed(event.target[0].value);
+    },
+    [],
+  )
   //TYPESCRIPT
   //NODEJS EXPRESS JS
   //HIDE API
   return (
     <div className="container">
-      <InputForm
-        handleSubmit={handleSubmit}
-        seed={seed}
-      />
+      <InputForm handleSubmit={handleSubmit}/>
       {seed === null ? <Welcome /> : <Outputbox usersData={data} />}
     </div>
   );

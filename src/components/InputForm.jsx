@@ -1,13 +1,12 @@
 import React from 'react'
 
-function InputForm({handleSubmit, seed}) {
+function InputForm({handleSubmit, inputRef}) {
   return (
     <form className='form-container' onSubmit={handleSubmit}>
         <input
           className="input"
           name="seed"
           placeholder="Enter random string"
-          defaultValue={seed}
           required
         />
         <button type="submit"><i className="fas fa-search"></i></button>

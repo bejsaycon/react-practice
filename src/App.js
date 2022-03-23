@@ -6,9 +6,10 @@ import InputForm from "./components/InputForm";
 import { useFetch } from "./custom_hooks/useFetch";
 
 function App() {
-  const [seed, setSeed] = useState(null);
+  const [seed, setSeed] = useState('');
   const url = `https://randomuser.me/api/?seed=${seed}`;
   const {data} = useFetch(url);
+ 
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="container">
       <InputForm handleSubmit={handleSubmit}/>
-      {seed === null ? <Welcome /> : <Outputbox usersData={data} />}
+      {seed==='' ? <Welcome /> : <Outputbox usersData={data} />}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useCountRenders } from '../custom_hooks/useCountRenders';
 
-function InputForm({handleSubmit, inputRef}) {
+const InputForm = React.memo(({handleSubmit})=>{
+  useCountRenders('InputForm');
   return (
     <form className='form-container' onSubmit={handleSubmit}>
         <input
@@ -12,6 +14,5 @@ function InputForm({handleSubmit, inputRef}) {
         <button type="submit"><i className="fas fa-search"></i></button>
       </form>  
   )
-}
-
-export default InputForm
+})
+export default InputForm;

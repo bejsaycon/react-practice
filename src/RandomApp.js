@@ -5,7 +5,7 @@ import Outputbox from "./components/Outputbox";
 import InputForm from "./components/InputForm";
 import { useFetch } from "./custom_hooks/useFetch";
 
-function App() {
+function RandomApp() {
   const [seed, setSeed] = useState('');
   const url = `https://randomuser.me/api/?seed=${seed}`;
   const data = useFetch(url);
@@ -26,4 +26,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default RandomApp;
